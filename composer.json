@@ -1,0 +1,26 @@
+{
+    "name": "bydls/gitmannage",
+    "description": "git管理版本发布",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "hebinghua",
+            "email": "944870269@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.2",
+        "bydls/utils": "1.0.4",
+        "monolog/monolog": "^1.23 || ^2.0"
+    },
+    "require-dev": {
+        "php": ">=7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "bydls\\git\\": "src/"
+        }
+    }
+}
