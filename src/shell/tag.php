@@ -25,7 +25,8 @@ class tag extends base
 
     public function __construct()
     {
-        $this->branch=branch::getBranchNow();
+        $branch=new branch();
+        $this->branch=$branch->getBranchNow();
     }
 
     public function __call($name, $arguments)
