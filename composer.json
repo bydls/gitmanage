@@ -1,7 +1,7 @@
 {
     "name": "bydls/gitmannage",
     "description": "git管理版本发布",
-    "type": "project",
+    "type": "library",
     "license": "MIT",
     "authors": [
         {
