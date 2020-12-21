@@ -5,7 +5,7 @@
  * @Time: 2020/12/17   17:33
  */
 
-namespace bydls;
+namespace bydls\git;
 
 
 use bydls\git\shell\branch;
@@ -51,7 +51,8 @@ class git
     {
         $branch = new branch();
         $branch->getBranchNow();
-        return $branch->getResult();
+        $result=$branch->getResult();
+        return $result['0']??'';
     }
 
 

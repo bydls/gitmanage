@@ -22,13 +22,7 @@ class tag extends base
 {
 
     protected $shell;
-
-    public function __construct()
-    {
-        $branch=new branch();
-        $this->branch=$branch->getBranchNow();
-    }
-
+    
     public function __call($name, $arguments)
     {
         if (method_exists(shell::class, $name)) {
@@ -36,6 +30,7 @@ class tag extends base
         } else {
             throw new Exception('shell::' . $name . "  Not Exist!");
         }
+        return $this->getResult();
     }
 
 
