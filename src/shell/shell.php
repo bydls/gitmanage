@@ -51,7 +51,7 @@ class shell
      * @author: hbh
      * @Time: 2020/12/18   14:05
      */
-    public static function tagList()
+    public static function getTagList()
     {
         return 'git ls-remote --tags origin';
     }

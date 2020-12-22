@@ -14,6 +14,7 @@ use bydls\git\git;
 
 
 /**
+ * 
  * @method static getTagList()
  * @method static changeTag($branch)
  * @method static getTagNew()
@@ -24,11 +25,7 @@ class tag extends base
 {
 
     protected $shell;
-
-    public function __construct()
-    {
-        $this->branch=git::getBranchNow();
-    }
+    
 
     public function __call($name, $arguments)
     {
