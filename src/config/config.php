@@ -18,8 +18,4 @@ class config
     {
         return '';
     }
-    public static function  logUrl()
-    {
-        return '../storage/logs/branch/.log';
-    }
 }

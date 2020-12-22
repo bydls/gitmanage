@@ -14,7 +14,7 @@ namespace bydls\git;
 class config
 {
 
-    public static function __callStatic($method,$params)
+    public static function __callStatic($method)
     {
         $config = __NAMESPACE__ . '\\localconfig\\config';
         if (class_exists($config)) {

@@ -12,7 +12,7 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=7.2",
-        "bydls/utils": "^1.0",
+        "bydls/utils": "1.0.4",
         "monolog/monolog": "^1.23 || ^2.0"
     },
     "require-dev": {

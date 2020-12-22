@@ -14,9 +14,9 @@ use bydls\git\config;
 
 
 /**
- * @method static shell branchList()
- * @method static shell changeBranch($branch)
- * @method static shell getBranchNow()
+ * @method static branchList()
+ * @method static changeBranch($branch)
+ * @method static getBranchNow()
  * */
 class branch extends base
 {
@@ -31,12 +31,12 @@ class branch extends base
     public function __call($name, $arguments)
     {
         if (method_exists(shell::class, $name)) {
-            $this->shell = call_user_func([shell::class, $name], $arguments[0]??'');
+            $this->shell = call_user_func([shell::class, $name], $arguments);
         } else {
             throw new Exception('shell::' . $name . "  Not Exist!");
         }
-        return $this->getResult();
     }
+
 
     public function _getShell()
     {
