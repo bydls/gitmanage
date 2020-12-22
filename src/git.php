@@ -5,7 +5,7 @@
  * @Time: 2020/12/17   17:33
  */
 
-namespace bydls;
+namespace bydls\git;
 
 
 use bydls\git\shell\branch;
@@ -51,7 +51,8 @@ class git
     {
         $branch = new branch();
         $branch->getBranchNow();
-        return $branch->getResult();
+        $result=$branch->getResult();
+        return $result['0']??'';
     }
 
 
@@ -93,19 +94,6 @@ class git
     {
         $branch = new tag();
         $branch->getTagNew();
-        return $branch->getResult();
-    }
-
-    /**获取当前标签
-     * @return mixed
-     * @throws Exception
-     * @author: hbh
-     * @Time: 2020/12/22   10:19
-     */
-    public static function getTagNow()
-    {
-        $branch = new tag();
-        $branch->getTagNow();
         return $branch->getResult();
     }
 }
