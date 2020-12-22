@@ -53,7 +53,7 @@ class shell
      */
     public static function tagList()
     {
-        return ' git ls-remote --tags origin';
+        return 'git ls-remote --tags origin';
     }
 
     /**切换标签
@@ -74,7 +74,7 @@ class shell
      */
     public static function getTagNow()
     {
-        return ' git describe --tags';
+        return 'git describe --tags';
     }
 
     /**获取最新标签
