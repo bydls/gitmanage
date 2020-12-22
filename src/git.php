@@ -95,4 +95,17 @@ class git
         $branch->getTagNew();
         return $branch->getResult();
     }
+
+    /**获取当前标签
+     * @return mixed
+     * @throws Exception
+     * @author: hbh
+     * @Time: 2020/12/22   10:19
+     */
+    public static function getTagNow()
+    {
+        $branch = new tag();
+        $branch->getTagNow();
+        return $branch->getResult();
+    }
 }

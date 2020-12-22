@@ -67,13 +67,23 @@ class shell
         return 'git checkout ' . $tag;
     }
 
-    /**获取最新标签
+    /**获取当前标签
      * @return string
      * @author: hbh
      * @Time: 2020/12/18   14:21
      */
-    public static function getTagNew()
+    public static function getTagNow()
     {
         return ' git describe --tags';
+    }
+
+    /**获取最新标签
+     * @return string
+     * @author: hbh
+     * @Time: 2020/12/22   10:18
+     */
+    public static function getTagNew()
+    {
+        return 'git describe --tags `git rev-list --tags --max-count=1`';
     }
 }
