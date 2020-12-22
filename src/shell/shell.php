@@ -77,7 +77,7 @@ class shell
         return 'git describe --tags';
     }
 
-    /**获取最新标签
+    /**获取本地最新标签
      * @return string
      * @author: hbh
      * @Time: 2020/12/22   10:18
@@ -85,5 +85,15 @@ class shell
     public static function getTagNew()
     {
         return 'git describe --tags `git rev-list --tags --max-count=1`';
+    }
+
+    /**拉取最新标签到本地但不切换
+     * @return string
+     * @author: hbh
+     * @Time: 2020/12/22   11:07
+     */
+    public static function pullTagNew()
+    {
+        return 'git fetch --tags';
     }
 }

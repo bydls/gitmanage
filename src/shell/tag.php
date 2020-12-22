@@ -18,6 +18,7 @@ use bydls\git\config\config;
  * @method static changeTag($branch)
  * @method static getTagNew()
  * @method static getTagNow()
+ * @method static pullTagNew()
  * */
 class tag extends base
 {

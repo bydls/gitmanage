@@ -83,7 +83,7 @@ class git
         return $branch->getResult();
     }
 
-    /**获取最新标签
+    /**获取本地最新标签
      * @return mixed
      * @throws Exception
      * @author: hbh
@@ -103,6 +103,19 @@ class git
      * @Time: 2020/12/22   10:19
      */
     public static function getTagNow()
+    {
+        $branch = new tag();
+        $branch->getTagNow();
+        return $branch->getResult();
+    }
+
+    /**拉取最新标签到本地但不切换
+     * @return mixed
+     * @throws Exception
+     * @author: hbh
+     * @Time: 2020/12/22   11:09
+     */
+    public static function pullTagNew()
     {
         $branch = new tag();
         $branch->getTagNow();
