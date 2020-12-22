@@ -23,11 +23,6 @@ class branch extends base
 
     protected $shell;
 
-    public function __construct()
-    {
-        $this->setProjectDir(config::projectDir());
-    }
-
     public function __call($name, $arguments)
     {
         if (method_exists(shell::class, $name)) {
@@ -35,6 +30,7 @@ class branch extends base
         } else {
             throw new Exception('shell::' . $name . "  Not Exist!");
         }
+        return $this->getResult();
     }
 
 

@@ -18,4 +18,8 @@ class config
     {
         return '';
     }
+    public static function  logUrl()
+    {
+        return '../logs/branch/git.log';
+    }
 }
