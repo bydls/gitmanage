@@ -9,7 +9,9 @@ namespace bydls\git\shell;
 
 
 use bydls\Exception;
+use bydls\git\localconfig\config;
 use bydls\git\Log\Log;
+use bydls\git\Log\Logger;
 use bydls\Utils;
 
 class execute
@@ -28,12 +30,15 @@ class execute
 
     public function getResult()
     {
+        $logger = new Logger();
+        $logger->setConfig(['file'=>config::logUrl()]);
+        Log::setInstance($logger);
         switch ($this->log_type) {
             case 1:
-                Log::info('【git分支操作】：', ['ip' => Utils::getIPAddress(), 'shell' => $this->shell,'result'=>base64_encode($this->result)]);
+                Log::info('【git分支操作】：', ['ip' => Utils::getIPAddress(), 'shell' => $this->shell,'result'=>json_encode($this->result)]);
                 break;
             case 2:
-                Log::info('【git标签操作】：', ['ip' => Utils::getIPAddress(), 'shell' => $this->shell,'result'=>base64_encode($this->result)]);
+                Log::info('【git标签操作】：', ['ip' => Utils::getIPAddress(), 'shell' => $this->shell,'result'=>json_encode($this->result)]);
                 break;
         }
         return $this->result;

@@ -10,11 +10,11 @@ namespace bydls\git\shell;
 
 use bydls\Exception;
 use bydls\git\base\base;
-use bydls\git\config\config;
+use bydls\git\git;
 
 
 /**
- * @method static tagList()
+ * @method static getTagList()
  * @method static changeTag($branch)
  * @method static getTagNew()
  * @method static getTagNow()
@@ -27,16 +27,17 @@ class tag extends base
 
     public function __construct()
     {
-        $this->branch=branch::getBranchNow();
+        $this->branch=git::getBranchNow();
     }
 
     public function __call($name, $arguments)
     {
         if (method_exists(shell::class, $name)) {
-            $this->shell = call_user_func([shell::class, $name], $arguments);
+            $this->shell = call_user_func([shell::class, $name], $arguments[0]??'');
         } else {
             throw new Exception('shell::' . $name . "  Not Exist!");
         }
+        return $this->getResult();
     }
 
 

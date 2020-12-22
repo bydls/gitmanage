@@ -5,7 +5,7 @@
  * @Time: 2020/12/17   17:33
  */
 
-namespace bydls;
+namespace bydls\git;
 
 
 use bydls\git\shell\branch;
@@ -51,7 +51,8 @@ class git
     {
         $branch = new branch();
         $branch->getBranchNow();
-        return $branch->getResult();
+        $now=$branch->getResult();
+        return $now[0]??'';
     }
 
 
@@ -106,7 +107,8 @@ class git
     {
         $branch = new tag();
         $branch->getTagNow();
-        return $branch->getResult();
+        $now=$branch->getResult();
+        return $now[0]??'';
     }
 
     /**拉取最新标签到本地但不切换
@@ -118,7 +120,7 @@ class git
     public static function pullTagNew()
     {
         $branch = new tag();
-        $branch->getTagNow();
+        $branch->getTagNew();
         return $branch->getResult();
     }
 }
