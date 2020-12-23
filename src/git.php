@@ -113,6 +113,6 @@ class git
     public static function pullTagNew()
     {
         $branch = new tag();
-        return $branch->getTagNew();
+        return $branch->pullTagNew();
     }
 }

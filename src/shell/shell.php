@@ -53,7 +53,7 @@ class shell
      */
     public static function getTagList()
     {
-        return 'git ls-remote --tags origin';
+        return 'sudo git ls-remote --tags origin';
     }
 
     /**切换标签
@@ -64,7 +64,7 @@ class shell
      */
     public static function changeTag(string $tag)
     {
-        return 'git checkout ' . $tag;
+        return 'sudo git checkout ' . $tag;
     }
 
     /**获取当前标签
@@ -74,7 +74,7 @@ class shell
      */
     public static function getTagNow()
     {
-        return 'git describe --tags';
+        return 'sudo git describe --tags';
     }
 
     /**获取本地最新标签
@@ -84,7 +84,7 @@ class shell
      */
     public static function getTagNew()
     {
-        return 'git describe --tags `git rev-list --tags --max-count=1`';
+        return 'sudo git describe --tags `git rev-list --tags --max-count=1`';
     }
 
     /**拉取最新标签到本地但不切换
@@ -94,6 +94,6 @@ class shell
      */
     public static function pullTagNew()
     {
-        return 'git fetch --tags';
+        return 'sudo git fetch --tags';
     }
 }
