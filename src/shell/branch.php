@@ -36,7 +36,7 @@ class branch extends base
 
     public function _getShell()
     {
-        return 'cd ' . $this->project_dir . ' && ' . $this->shell;
+        return $this->shell;
     }
 
     /**获取shell执行结果
