@@ -14,7 +14,7 @@ use bydls\git\git;
 
 
 /**
- * 
+ *
  * @method static getTagList()
  * @method static changeTag($branch)
  * @method static getTagNew()
@@ -25,12 +25,12 @@ class tag extends base
 {
 
     protected $shell;
-    
+
 
     public function __call($name, $arguments)
     {
         if (method_exists(shell::class, $name)) {
-            $this->shell = call_user_func([shell::class, $name], $arguments[0]??'');
+            $this->shell = call_user_func([shell::class, $name], $arguments[0] ?? '');
         } else {
             throw new Exception('shell::' . $name . "  Not Exist!");
         }
@@ -40,7 +40,7 @@ class tag extends base
 
     public function _getShell()
     {
-        return $this->shell;
+        return $this->getProjectDir() ? 'cd ' . $this->getProjectDir() . '&&' . $this->shell : $this->shell;
     }
 
     /**获取shell执行结果
