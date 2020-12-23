@@ -23,8 +23,7 @@ class git
     public static function getGitBranchList()
     {
         $branch = new branch();
-        $branch->branchList();
-        return $branch->getResult();
+        return $branch->branchList();
     }
 
     /**切换分支
@@ -37,8 +36,7 @@ class git
     public static function changeBranch(String $branch)
     {
         $branch = new branch();
-        $branch->changeBranch($branch);
-        return $branch->getResult();
+        return $branch->changeBranch($branch);
     }
 
     /**获取当前分支
@@ -50,9 +48,8 @@ class git
     public static function getBranchNow()
     {
         $branch = new branch();
-        $branch->getBranchNow();
-        $now=$branch->getResult();
-        return $now[0]??'';
+        $now = $branch->getBranchNow();
+        return $now[0] ?? '';
     }
 
 
@@ -65,8 +62,7 @@ class git
     public static function getTagList()
     {
         $branch = new tag();
-        $branch->tagList();
-        return $branch->getResult();
+        return $branch->getTagList();
     }
 
 
@@ -80,8 +76,7 @@ class git
     public static function changeTag(String $tag)
     {
         $branch = new tag();
-        $branch->changeTag($tag);
-        return $branch->getResult();
+        return $branch->changeTag($tag);
     }
 
     /**获取本地最新标签
@@ -93,8 +88,7 @@ class git
     public static function getTagNew()
     {
         $branch = new tag();
-        $branch->getTagNew();
-        return $branch->getResult();
+        return $branch->getTagNew();
     }
 
     /**获取当前标签
@@ -106,9 +100,8 @@ class git
     public static function getTagNow()
     {
         $branch = new tag();
-        $branch->getTagNow();
-        $now=$branch->getResult();
-        return $now[0]??'';
+        $now = $branch->getTagNow();
+        return $now[0] ?? '';
     }
 
     /**拉取最新标签到本地但不切换
@@ -120,7 +113,6 @@ class git
     public static function pullTagNew()
     {
         $branch = new tag();
-        $branch->getTagNew();
-        return $branch->getResult();
+        return $branch->getTagNew();
     }
 }
